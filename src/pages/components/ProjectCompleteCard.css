@@ -1,0 +1,203 @@
+/* Slide-in Modal */
+.slide-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25vw;
+    height: 95vh;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    transform: translateX(-100%);
+    animation: pushIn 0.4s ease forwards;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+  
+/* Animate the push from left */
+@keyframes pushIn {
+    to {
+      transform: translateX(0);
+    }
+}
+  
+/* Push the main content to the right when modal is open */
+.homepage {
+    transition: margin-left 0.4s ease;
+}
+  
+.homepage.modal-open {
+    margin-left: 25vw; /* Same width as modal */
+}
+  
+/* Close button style */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+  
+/* Modal inner content */
+.modal-content {
+    margin-top: 40px;
+}
+
+.modal-scrollable-content {
+    flex: 1;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+  
+.modal-scrollable-content::-webkit-scrollbar {
+    display: none;
+}
+  
+.modal-scrollable-content::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+  
+.modal-scrollable-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+  
+.modal-buttons button {
+    padding: 8px 16px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+}
+  
+.modal-buttons button:hover {
+    background-color: #666;
+}
+  
+.modal-buttons button:disabled {
+    background-color: #222;
+    cursor: not-allowed;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 300px; /* strict height */
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #111; /* fallback background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.carousel-image img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* ensures the image fits without being cropped */
+    transition: opacity 0.5s ease;
+}
+
+.project-name {
+    margin-bottom: 0;
+}
+
+.project-description {
+    margin-top: 0;
+    font-size: 14px;
+    color: hsl(240 3.83% 46.08% / 1);
+}
+
+.company-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+  
+.company-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 20%;
+    object-fit: cover;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    -ms-border-radius: 20%;
+    -o-border-radius: 20%;
+}
+  
+.company-text {
+    display: flex;
+    flex-direction: column;
+}
+  
+.company-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+}
+
+.company-about {
+    font-size: 14px;
+    color: #888;
+    margin-top: 2px;
+}
+
+.modal-buttons-fixed {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 40px); /* 100% - padding (20px left + 20px right) */
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background-color: #1e1e1e;
+    border-top: 1px solid #333;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal-buttons-fixed button {
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+  }
+  
+  .modal-buttons-fixed button:hover {
+    background-color: #555;
+  }
+  
+  .modal-buttons-fixed button:disabled {
+    background-color: #222;
+    cursor: not-allowed;
+  }
