@@ -5,6 +5,7 @@ import FullNameCard from './components/FullNameCard';
 import HeadlineCard from './components/HeadlineCard';
 import ProfileCard from './components/ProfileCard';
 import ContactCard from './components/ContactCard';
+import ScheduleCard from './components/ScheduleCard';
 
 const HomePage = () => {
   return (
@@ -46,10 +47,7 @@ const HomePage = () => {
           <p className="stat-bg">12<span className="small"> years</span></p>
         </a>
 
-        <div className="card green-card skills">
-          <h2>Skills</h2>
-          <p className="stat-bg">73</p>
-        </div>
+        <ScheduleCard />
 
         <ContactCard />
         
